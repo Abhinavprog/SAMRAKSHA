@@ -1,9 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Shield, Stethoscope, Pill, Users, Check, ArrowRight } from 'lucide-react';
 
 export default function Home() {
+  const router = useRouter();
+
+  const scrollToPortals = () => {
+    document.getElementById('portals')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Header */}
@@ -41,17 +48,25 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">
+            <button
+              type="button"
+              onClick={scrollToPortals}
+              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl"
+            >
               Get Started
             </button>
-            <button className="px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg border border-gray-300 hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl">
+            <button
+              type="button"
+              onClick={() => router.push('/demo')}
+              className="px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg border border-gray-300 hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl"
+            >
               Learn More
             </button>
           </div>
         </div>
 
         {/* Role Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
+        <div id="portals" className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16 scroll-mt-24">
           {/* Doctor Card */}
           <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-500 transform hover:-translate-y-2">
             <Link href="/doctor/login">
@@ -248,7 +263,11 @@ export default function Home() {
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Secure Healthcare?</h3>
           <p className="text-blue-100 text-xl mb-8 max-w-2xl mx-auto">Join thousands of healthcare professionals using Samraksha to protect patients</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl">
+            <button
+              type="button"
+              onClick={scrollToPortals}
+              className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
+            >
               Get Started Today
             </button>
           </div>

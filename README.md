@@ -2,6 +2,24 @@
 
 Secure digital prescription platform with separate portals for doctors, patients, and pharmacists.
 
+## Live Deployment
+
+The app is deployed on **Vercel** with **MongoDB Atlas** as the production database.
+
+| | |
+| --- | --- |
+| **Production URL** | [https://samraksha-kappa.vercel.app](https://samraksha-kappa.vercel.app) |
+| **Hosting** | [Vercel](https://vercel.com) |
+| **Database** | [MongoDB Atlas](https://www.mongodb.com/atlas) |
+
+**Portals**
+
+- Doctor: [/doctor/login](https://samraksha-kappa.vercel.app/doctor/login) · [/doctor/signup](https://samraksha-kappa.vercel.app/doctor/signup)
+- Patient: [/patient/login](https://samraksha-kappa.vercel.app/patient/login) · [/patient/signup](https://samraksha-kappa.vercel.app/patient/signup)
+- Pharmacist: [/pharmacist/login](https://samraksha-kappa.vercel.app/pharmacist/login) · [/pharmacist/signup](https://samraksha-kappa.vercel.app/pharmacist/signup)
+
+**Demo pages** (no auth): [/demo/doctor](https://samraksha-kappa.vercel.app/demo/doctor) · [/demo/patient](https://samraksha-kappa.vercel.app/demo/patient) · [/demo/pharmacist](https://samraksha-kappa.vercel.app/demo/pharmacist)
+
 ## What This Project Does
 
 Samraksha helps issue, share, and verify prescriptions using encrypted QR codes.
@@ -41,8 +59,8 @@ Samraksha helps issue, share, and verify prescriptions using encrypted QR codes.
 
 ### Database
 
-- MongoDB
-- Mongoose
+- MongoDB Atlas (production)
+- MongoDB / Mongoose (local development)
 
 ## Project Structure
 
@@ -130,18 +148,22 @@ Response (shape):
 Create `.env.local` in the project root for local development:
 
 ```env
-MONGODB_URI=your_mongodb_connection_string
+MONGODB_URI=mongodb://localhost:27017/samraksha
 JWT_SECRET=your_jwt_secret
 AES_ENCRYPTION_KEY=your_32_character_aes_key_here
+NMC_API_URL=https://nmc-api.example.com
 ```
+
+For production on Vercel, set the same variables in **Project Settings → Environment Variables**. Use your MongoDB Atlas connection string for `MONGODB_URI`.
 
 | Variable | Description |
 | --- | --- |
-| `MONGODB_URI` | MongoDB connection string. Defaults to `mongodb://localhost:27017/samraksha` if unset. |
+| `MONGODB_URI` | MongoDB connection string. Use `mongodb://localhost:27017/samraksha` locally; use an Atlas `mongodb+srv://...` URI in production. |
 | `JWT_SECRET` | Secret used to sign auth tokens for doctors, patients, and pharmacists. Use a long random string in production. |
 | `AES_ENCRYPTION_KEY` | Key used to encrypt/decrypt prescription QR payloads. **Must stay the same** across deploys or existing QR codes will fail verification. |
+| `NMC_API_URL` | External NMC verification API endpoint (placeholder in development). |
 
-Do not commit `.env.local`. For production, set the same variables in your hosting provider's dashboard.
+Do not commit `.env.local`.
 
 ## Local Development
 
@@ -170,61 +192,69 @@ npm run start
 
 ## Deployment
 
-This is a Next.js 16 app with API routes and MongoDB. [Vercel](https://vercel.com) is the recommended host.
+This project is deployed with **Vercel** (frontend + API routes) and **MongoDB Atlas** (database).
 
-### 1. Prepare MongoDB Atlas
+### Architecture
 
-1. Create a free cluster at [MongoDB Atlas](https://www.mongodb.com/atlas).
-2. Add a database user and copy the connection string.
-3. Under **Network Access**, allow your deployment IP or `0.0.0.0/0` for development/testing.
+```text
+Browser  →  Vercel (Next.js 16)  →  MongoDB Atlas
+              ├── Static pages
+              └── API routes (/api/*)
+```
 
-Use a connection string like:
+### 1. MongoDB Atlas (production database)
+
+1. Create a free M0 cluster at [MongoDB Atlas](https://www.mongodb.com/atlas).
+2. Under **Database Access**, create a user with read/write privileges.
+3. Under **Network Access**, allow `0.0.0.0/0` so Vercel serverless functions can connect.
+4. Copy the connection string from **Connect → Drivers** and set the database name to `samraksha`:
 
 ```text
 mongodb+srv://<user>:<password>@<cluster>.mongodb.net/samraksha?retryWrites=true&w=majority
 ```
 
-### 2. Deploy to Vercel
+URL-encode special characters in the password (for example `@` → `%40`).
 
-1. Push this project to GitHub (or GitLab/Bitbucket).
-2. Import the repo at [vercel.com/new](https://vercel.com/new).
-3. Add environment variables in the Vercel project settings:
-   - `MONGODB_URI`
+### 2. Vercel (hosting)
+
+**Option A — GitHub import (recommended for CI/CD)**
+
+1. Push this repo to GitHub.
+2. Import it at [vercel.com/new](https://vercel.com/new).
+3. Add environment variables under **Project Settings → Environment Variables** (Production):
+   - `MONGODB_URI` — Atlas connection string from step 1
    - `JWT_SECRET`
    - `AES_ENCRYPTION_KEY`
+   - `NMC_API_URL`
 4. Deploy. Vercel detects Next.js automatically and runs `npm run build`.
 
-Or deploy from the CLI:
+**Option B — Vercel CLI**
 
 ```bash
 npx vercel login
-npx vercel
+npx vercel link
+npx vercel env add MONGODB_URI production
+npx vercel env add JWT_SECRET production
+npx vercel env add AES_ENCRYPTION_KEY production
+npx vercel env add NMC_API_URL production
+npx vercel deploy --prod
 ```
-
-For a production URL:
-
-```bash
-npx vercel --prod
-```
-
-When prompted, add the three environment variables for the Production environment.
 
 ### 3. Verify the deployment
 
-After deploy, open your Vercel URL and check:
+Open [https://samraksha-kappa.vercel.app](https://samraksha-kappa.vercel.app) and confirm:
 
 - Home page loads at `/`
-- Doctor signup/login at `/doctor/signup` and `/doctor/login`
-- Patient signup/login at `/patient/signup` and `/patient/login`
-- Pharmacist signup/login at `/pharmacist/signup` and `/pharmacist/login`
-
-Demo pages (no auth required) are available under `/demo/*` for local testing flows.
+- Signup and login work for doctor, patient, and pharmacist portals
+- API routes connect to Atlas (create a test account to verify)
 
 ### Deployment notes
 
+- **MongoDB Atlas + Vercel**: Localhost MongoDB URIs do not work on Vercel; always use an Atlas `mongodb+srv://` string in production.
 - **QR compatibility**: If you change `AES_ENCRYPTION_KEY` after prescriptions are issued, old QR codes will no longer decrypt. Rotate keys only with a migration plan.
 - **Camera access**: Pharmacist QR scanning requires HTTPS in production; Vercel provides this by default.
-- **Cold starts**: Serverless functions may add a short delay on first API request after idle time.
+- **Cold starts**: Serverless functions may add a short delay on the first API request after idle time.
+- **Redeploy after env changes**: Run `npx vercel deploy --prod` or trigger a new deploy from the Vercel dashboard after updating environment variables.
 
 ## Verification Flow (High Level)
 
