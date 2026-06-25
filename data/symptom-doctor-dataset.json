@@ -1,0 +1,174 @@
+{
+  "examples": [
+    { "symptoms": "preoperative anesthesia assessment surgery next week", "specialty": "Anesthesiology" },
+    { "symptoms": "fear of going under general anesthesia wisdom teeth", "specialty": "Anesthesiology" },
+    { "symptoms": "epidural labor pain management consultation", "specialty": "Anesthesiology" },
+
+    { "symptoms": "chest pain tightness radiating to left arm jaw", "specialty": "Cardiology" },
+    { "symptoms": "heart palpitations skipping beats", "specialty": "Cardiology" },
+    { "symptoms": "shortness of breath climbing stairs swelling ankles", "specialty": "Cardiology" },
+    { "symptoms": "high blood pressure headaches dizziness", "specialty": "Cardiology" },
+
+    { "symptoms": "coronary artery bypass evaluation valve replacement", "specialty": "Cardiothoracic Surgery" },
+    { "symptoms": "congenital heart defect surgery adult follow up", "specialty": "Cardiothoracic Surgery" },
+    { "symptoms": "thoracic aortic aneurysm open heart discussion", "specialty": "Cardiothoracic Surgery" },
+
+    { "symptoms": "icu admission respiratory failure ventilator", "specialty": "Critical Care Medicine" },
+    { "symptoms": "septic shock multi organ failure intensive care", "specialty": "Critical Care Medicine" },
+    { "symptoms": "post surgery monitoring intensive care unit", "specialty": "Critical Care Medicine" },
+
+    { "symptoms": "rash itchy red patches spreading", "specialty": "Dermatology" },
+    { "symptoms": "moles changing shape color bleeding", "specialty": "Dermatology" },
+    { "symptoms": "acne cystic painful face back", "specialty": "Dermatology" },
+
+    { "symptoms": "severe trauma accident emergency bleeding unstable", "specialty": "Emergency Medicine" },
+    { "symptoms": "acute poisoning overdose emergency stabilisation", "specialty": "Emergency Medicine" },
+    { "symptoms": "sudden collapse brought to casualty resuscitation", "specialty": "Emergency Medicine" },
+
+    { "symptoms": "frequent urination excessive thirst weight loss", "specialty": "Endocrinology" },
+    { "symptoms": "thyroid swelling heat intolerance sweating", "specialty": "Endocrinology" },
+    { "symptoms": "hypothyroid fatigue cold intolerance", "specialty": "Endocrinology" },
+
+    { "symptoms": "severe ear pain discharge hearing loss", "specialty": "ENT" },
+    { "symptoms": "sinusitis facial pressure nasal congestion", "specialty": "ENT" },
+    { "symptoms": "sore throat tonsillitis difficulty swallowing", "specialty": "ENT" },
+
+    { "symptoms": "chronic disease management referral family doctor", "specialty": "Family Medicine" },
+    { "symptoms": "preventive care screening whole family same clinic", "specialty": "Family Medicine" },
+    { "symptoms": "primary care family practice long term follow up", "specialty": "Family Medicine" },
+
+    { "symptoms": "abdominal pain upper right after fatty meals", "specialty": "Gastroenterology" },
+    { "symptoms": "heartburn acid reflux chronic indigestion", "specialty": "Gastroenterology" },
+    { "symptoms": "blood in stool black tarry stools", "specialty": "Gastroenterology" },
+    { "symptoms": "stomach ache stomach pain nausea vomiting", "specialty": "Gastroenterology" },
+
+    { "symptoms": "fever fatigue mild cough no focal signs", "specialty": "General Physician" },
+    { "symptoms": "annual health checkup screening labs", "specialty": "General Physician" },
+    { "symptoms": "vaccination travel advice routine", "specialty": "General Physician" },
+
+    { "symptoms": "acute appendicitis right lower quadrant surgical consult", "specialty": "General Surgery" },
+    { "symptoms": "inguinal hernia bulge heavy lifting repair", "specialty": "General Surgery" },
+    { "symptoms": "gallstones cholecystectomy discussion", "specialty": "General Surgery" },
+
+    { "symptoms": "falls frailty elderly polypharmacy review", "specialty": "Geriatrics" },
+    { "symptoms": "dementia wandering caregiver support older adult", "specialty": "Geriatrics" },
+    { "symptoms": "urinary incontinence nursing home elderly", "specialty": "Geriatrics" },
+
+    { "symptoms": "pelvic pain irregular bleeding pap smear", "specialty": "Gynecology" },
+    { "symptoms": "menopause hot flashes hormone therapy", "specialty": "Gynecology" },
+    { "symptoms": "fibroids heavy periods", "specialty": "Gynecology" },
+
+    { "symptoms": "unexplained anemia blood film abnormal cells", "specialty": "Hematology" },
+    { "symptoms": "leukemia lymphoma chemotherapy planning", "specialty": "Hematology" },
+    { "symptoms": "clotting disorder hemophilia specialist", "specialty": "Hematology" },
+
+    { "symptoms": "persistent fever after travel malaria dengue workup", "specialty": "Infectious Disease" },
+    { "symptoms": "hiv prep antiretroviral management", "specialty": "Infectious Disease" },
+    { "symptoms": "multidrug resistant tuberculosis treatment", "specialty": "Infectious Disease" },
+
+    { "symptoms": "new cancer diagnosis staging chemotherapy plan", "specialty": "Medical Oncology" },
+    { "symptoms": "breast cancer hormone therapy oncologist", "specialty": "Medical Oncology" },
+    { "symptoms": "metastatic disease immunotherapy discussion", "specialty": "Medical Oncology" },
+
+    { "symptoms": "swelling legs foamy urine kidney function", "specialty": "Nephrology" },
+    { "symptoms": "high creatinine chronic kidney disease", "specialty": "Nephrology" },
+    { "symptoms": "dialysis access follow up", "specialty": "Nephrology" },
+
+    { "symptoms": "premature infant nicu respiratory distress", "specialty": "Neonatology" },
+    { "symptoms": "newborn jaundice phototherapy intensive care", "specialty": "Neonatology" },
+    { "symptoms": "low birth weight feeding tubes neonatal", "specialty": "Neonatology" },
+
+    { "symptoms": "severe headache stiff neck stroke symptoms", "specialty": "Neurology" },
+    { "symptoms": "fits seizures episodes blackouts", "specialty": "Neurology" },
+    { "symptoms": "seizures convulsions loss of consciousness", "specialty": "Neurology" },
+    { "symptoms": "parkinson tremor movement disorder", "specialty": "Neurology" },
+
+    { "symptoms": "brain tumor evaluation craniotomy planning", "specialty": "Neurosurgery" },
+    { "symptoms": "slipped disc sciatica surgery spine", "specialty": "Neurosurgery" },
+    { "symptoms": "intracranial bleed evacuation neurosurgical", "specialty": "Neurosurgery" },
+
+    { "symptoms": "thyroid scan uptake nuclear imaging", "specialty": "Nuclear Medicine" },
+    { "symptoms": "pet scan cancer staging radiotracer", "specialty": "Nuclear Medicine" },
+    { "symptoms": "bone scan metastasis nuclear", "specialty": "Nuclear Medicine" },
+
+    { "symptoms": "labor delivery pain third trimester bleeding", "specialty": "Obstetrics" },
+    { "symptoms": "high risk pregnancy hypertension gestational diabetes", "specialty": "Obstetrics" },
+    { "symptoms": "cesarean section planning fetal distress", "specialty": "Obstetrics" },
+
+    { "symptoms": "workplace chemical exposure fitness certificate", "specialty": "Occupational Medicine" },
+    { "symptoms": "occupational asthma industrial lung screening", "specialty": "Occupational Medicine" },
+    { "symptoms": "workplace injury return to work assessment", "specialty": "Occupational Medicine" },
+
+    { "symptoms": "blurred vision double vision sudden", "specialty": "Ophthalmology" },
+    { "symptoms": "cataract surgery evaluation", "specialty": "Ophthalmology" },
+    { "symptoms": "glaucoma eye pressure drops", "specialty": "Ophthalmology" },
+
+    { "symptoms": "knee pain swelling after injury", "specialty": "Orthopedics" },
+    { "symptoms": "lower back pain sciatica leg pain", "specialty": "Orthopedics" },
+    { "symptoms": "fracture cast orthopaedic follow up", "specialty": "Orthopedics" },
+
+    { "symptoms": "chronic back pain failed conservative treatment injections", "specialty": "Pain Medicine" },
+    { "symptoms": "fibromyalgia widespread pain clinic", "specialty": "Pain Medicine" },
+    { "symptoms": "nerve block chronic regional pain", "specialty": "Pain Medicine" },
+
+    { "symptoms": "biopsy report review tissue diagnosis", "specialty": "Pathology" },
+    { "symptoms": "lab correlation abnormal smear cytopathology", "specialty": "Pathology" },
+    { "symptoms": "histopathology report second opinion", "specialty": "Pathology" },
+
+    { "symptoms": "child fever cough routine vaccination", "specialty": "Pediatrics" },
+    { "symptoms": "child not growing developmental delay", "specialty": "Pediatrics" },
+    { "symptoms": "neonatal follow up outside nicu", "specialty": "Pediatrics" },
+
+    { "symptoms": "child hernia undescended testis surgery", "specialty": "Pediatric Surgery" },
+    { "symptoms": "pediatric appendicitis laparoscopic child", "specialty": "Pediatric Surgery" },
+    { "symptoms": "congenital anomaly repair infant surgery", "specialty": "Pediatric Surgery" },
+
+    { "symptoms": "stroke rehabilitation walking training spasticity", "specialty": "Physical Medicine and Rehabilitation" },
+    { "symptoms": "spinal cord injury wheelchair mobility clinic", "specialty": "Physical Medicine and Rehabilitation" },
+    { "symptoms": "amputation prosthetic physiatrist", "specialty": "Physical Medicine and Rehabilitation" },
+
+    { "symptoms": "facial laceration scar revision cosmetic", "specialty": "Plastic Surgery" },
+    { "symptoms": "burns skin graft plastic surgeon", "specialty": "Plastic Surgery" },
+    { "symptoms": "breast reconstruction after mastectomy", "specialty": "Plastic Surgery" },
+
+    { "symptoms": "persistent sadness loss of interest", "specialty": "Psychiatry" },
+    { "symptoms": "panic attacks anxiety severe", "specialty": "Psychiatry" },
+    { "symptoms": "schizophrenia medication adjustment", "specialty": "Psychiatry" },
+
+    { "symptoms": "chronic cough blood in sputum wheezing", "specialty": "Pulmonology" },
+    { "symptoms": "asthma copd inhaler optimization", "specialty": "Pulmonology" },
+    { "symptoms": "sleep apnea cpap lung function", "specialty": "Pulmonology" },
+
+    { "symptoms": "ct report review incidental lung nodule imaging", "specialty": "Radiology" },
+    { "symptoms": "mri interpretation second opinion scan", "specialty": "Radiology" },
+    { "symptoms": "interventional radiology biopsy drain", "specialty": "Radiology" },
+
+    { "symptoms": "joint pain morning stiffness rheumatoid arthritis", "specialty": "Rheumatology" },
+    { "symptoms": "lupus rash joint swelling autoimmune", "specialty": "Rheumatology" },
+    { "symptoms": "gout recurrent tophi rheumatologist", "specialty": "Rheumatology" },
+
+    { "symptoms": "insomnia daytime sleepiness sleep study", "specialty": "Sleep Medicine" },
+    { "symptoms": "narcolepsy cataplexy sleep clinic", "specialty": "Sleep Medicine" },
+    { "symptoms": "restless legs periodic limb movement sleep", "specialty": "Sleep Medicine" },
+
+    { "symptoms": "acl tear athlete return to sport", "specialty": "Sports Medicine" },
+    { "symptoms": "stress fracture running overuse injury", "specialty": "Sports Medicine" },
+    { "symptoms": "concussion protocol athletic clearance", "specialty": "Sports Medicine" },
+
+    { "symptoms": "lung cancer lobectomy thoracotomy", "specialty": "Thoracic Surgery" },
+    { "symptoms": "empyema chest drain thoracic procedure", "specialty": "Thoracic Surgery" },
+    { "symptoms": "esophageal cancer thoracic resection", "specialty": "Thoracic Surgery" },
+
+    { "symptoms": "multiple injuries accident trauma team", "specialty": "Trauma Surgery" },
+    { "symptoms": "penetrating abdominal trauma laparotomy", "specialty": "Trauma Surgery" },
+    { "symptoms": "damage control surgery intensive trauma", "specialty": "Trauma Surgery" },
+
+    { "symptoms": "burning urination kidney stones male", "specialty": "Urology" },
+    { "symptoms": "prostate psa elevated urinary retention", "specialty": "Urology" },
+    { "symptoms": "erectile dysfunction evaluation", "specialty": "Urology" },
+
+    { "symptoms": "claudication peripheral artery bypass graft", "specialty": "Vascular Surgery" },
+    { "symptoms": "abdominal aortic aneurysm surveillance repair", "specialty": "Vascular Surgery" },
+    { "symptoms": "deep vein thrombosis varicose vein surgery", "specialty": "Vascular Surgery" }
+  ]
+}
